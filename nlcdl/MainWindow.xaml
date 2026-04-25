@@ -1,0 +1,17 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:nlcdl"
+        xmlns:Wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" x:Class="nlcdl.MainWindow"
+        mc:Ignorable="d"
+        Title="国图下载器" Height="450" Width="1000">
+    <Grid>
+        <TextBox TextWrapping="Wrap" Text="URL" VerticalAlignment="Top" Height="32"/>
+
+        <Wpf:WebView2 x:Name="WebView" Margin="0,32,400,0" IsEnabled="False"/>
+        <Wpf:WebView2 x:Name="ControlWebView" HorizontalAlignment="Right" Margin="0,32,0,0"  Width="400" IsEnabled="False"/>
+
+    </Grid>
+</Window>
