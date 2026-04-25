@@ -83,7 +83,6 @@ namespace nlcdl
                     }
                     var deferral = e.GetDeferral();
                     Task.Run(() => ReplayRequest(uri, method, headers, requestBody)).ContinueWith(_ => {
-                        Console.WriteLine("Replay completed, setting response...");
                         Application.Current.Dispatcher.Invoke(() => {
                             e.Response = WebView.CoreWebView2.Environment.CreateWebResourceResponse(FileStreamCache, 200, "OK", "Content-Type: application/pdf");
                             deferral.Complete();
