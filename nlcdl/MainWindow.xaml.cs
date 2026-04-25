@@ -69,6 +69,8 @@ namespace nlcdl
                 {
                     //PDF请求已经捕获
                     Status.Content = "PDF请求已捕获，正在下载...";
+                    DisableBtn();
+                    FileStreamCache = new();
                     var uri = e.Request.Uri;
                     var method = e.Request.Method;
                     var headers = e.Request.Headers.ToList();
