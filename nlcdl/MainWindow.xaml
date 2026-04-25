@@ -10,8 +10,13 @@
     <Grid>
         <TextBox x:Name="URLBox" TextWrapping="Wrap" Text="初始化组件..." VerticalAlignment="Top" Height="32" KeyDown="URLBox_KeyDown"/>
 
-        <Wpf:WebView2 x:Name="WebView" Margin="0,32,400,0" IsEnabled="False"/>
-        <Wpf:WebView2 x:Name="ControlWebView" HorizontalAlignment="Right" Margin="0,32,0,0"  Width="400" IsEnabled="False"/>
+        <Wpf:WebView2 x:Name="WebView" Margin="0,32,200,20" IsEnabled="False"/>
+        <Label x:Name="Status" Content="等待可捕获文件..." VerticalAlignment="Bottom" Height="20" Margin="0,0,200,0" />
+        <Grid HorizontalAlignment="Right" Margin="0,32,0,0"  Width="200">
+            <Button x:Name="PreviewBtn" Content="预览" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="60" IsEnabled="False" Click="PreviewBtn_Click"/>
+            <Button x:Name="SaveBtn" Content="保存" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="60" IsEnabled="False" HorizontalAlignment="Center" Click="SaveBtn_Click"/>
+            <Button x:Name="DropBtn" Content="放弃" Margin="130,0,0,10" VerticalAlignment="Bottom" Width="60" IsEnabled="False" Click="DropBtn_Click"/>
+        </Grid>
 
     </Grid>
 </Window>
