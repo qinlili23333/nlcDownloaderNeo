@@ -38,11 +38,24 @@ namespace nlcdl
             WebView.IsEnabled = true;
             WebView.CoreWebView2.Settings.IsStatusBarEnabled = false;
             WebView.CoreWebView2.Settings.IsBuiltInErrorPageEnabled = false;
+            WebView.CoreWebView2.NavigationStarting += (s, e) =>
+            {
+                URLBox.Text = e.Uri;
+            };
             ControlWebView.IsEnabled = true;
             ControlWebView.CoreWebView2.Settings.IsStatusBarEnabled = false;
             ControlWebView.CoreWebView2.Settings.IsBuiltInErrorPageEnabled = false;
             WebView.CoreWebView2.Navigate("http://read.nlc.cn/user/index");
             ControlWebView.CoreWebView2.NavigateToString(WebRes.Control);
         }
+
+        private void URLBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter || e.Key == Key.Return)
+            {
+                WebView.CoreWebView2.Navigate(URLBox.Text);
+            }
+        }
+
     }
 }

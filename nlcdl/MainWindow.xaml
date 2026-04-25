@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="国图下载器" Height="450" Width="1000">
     <Grid>
-        <TextBox TextWrapping="Wrap" Text="URL" VerticalAlignment="Top" Height="32"/>
+        <TextBox x:Name="URLBox" TextWrapping="Wrap" Text="初始化组件..." VerticalAlignment="Top" Height="32" KeyDown="URLBox_KeyDown"/>
 
         <Wpf:WebView2 x:Name="WebView" Margin="0,32,400,0" IsEnabled="False"/>
         <Wpf:WebView2 x:Name="ControlWebView" HorizontalAlignment="Right" Margin="0,32,0,0"  Width="400" IsEnabled="False"/>
