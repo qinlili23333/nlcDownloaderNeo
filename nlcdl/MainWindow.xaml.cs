@@ -42,6 +42,11 @@ namespace nlcdl
             {
                 URLBox.Text = e.Uri;
             };
+            WebView.CoreWebView2.NewWindowRequested += (sender, e) =>
+            {
+                e.Handled = true;
+                WebView.CoreWebView2.Navigate(e.Uri);
+            };
             ControlWebView.IsEnabled = true;
             ControlWebView.CoreWebView2.Settings.IsStatusBarEnabled = false;
             ControlWebView.CoreWebView2.Settings.IsBuiltInErrorPageEnabled = false;
